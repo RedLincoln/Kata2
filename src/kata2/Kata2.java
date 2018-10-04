@@ -7,17 +7,13 @@ public class Kata2 {
 
     public static void main(String[] args) {
         int []  data = {1,2,5,4,6,2,1,3,4,5,6,7,8,3,4};
-        Map<Integer, Integer> histogram = new HashMap<Integer, Integer>();
         
-        for (int key : data) {
-            histogram.put(key, histogram.containsKey(key) ? histogram.get(key) + 1 : 1);
-        }
+        Histogram histo = new Histogram (data);
+        Map<Integer, Integer> histogr = histo.getHistogram();
         
-        for (Map.Entry<Integer, Integer> entry : histogram.entrySet()) {
+        
+        for (Map.Entry<Integer, Integer> entry : histogr.entrySet()) {
             System.out.println(entry.getKey() + "==>" + entry.getValue());
-        }
-   
-                
-    }
-    
+        }          
+    }   
 }
